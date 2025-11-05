@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #00796B;
+            --color-primary-dark: #004D40;
+            --color-background: #F5F7FA;
+            --color-card-bg: #FFFFFF;
+            --color-text: #333333;
+            --color-border: #E0E0E0;
+            --color-danger-text: #DC3545;
+            --font-family-sans: 'Roboto', sans-serif;
+            --radius-medium: 6px;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        
+        .container {
+            flex-grow: 1; 
+            padding-top: 80px;
+            padding-bottom: 50px;
+            max-width: 600px;
+        }
+        
+        .error-box {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-medium);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+        }
+
+        .error-box h1 {
+            color: var(--color-danger-text);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-box p {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            border-radius: var(--radius-medium);
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-card-bg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #757575;
+            border-top: 1px solid var(--color-border);
+            background-color: var(--color-card-bg);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar"></nav> 
+
+<div class="container mt-5 text-center">
+    <div class="error-box">
+        <h1>An Error Occurred</h1>
+        <p>Sorry, you do not have permission to access this page or an unexpected error has happened.</p>
+        <a th:href="@{/}" class="btn btn-primary">Go to Homepage</a>
+    </div>
+</div>
+
+<footer class="footer"></footer>
+</body>
+</html>
